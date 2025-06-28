@@ -1,19 +1,15 @@
 name: Java CI
 
 on:
-  push:
-    paths:
-      - "**.java"
-  pull_request:
-    paths:
-      - "**.java"
+  push: # Runs on every push to any branch
+  pull_request: # Runs on every pull request to any branch
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Java
@@ -28,10 +24,7 @@ jobs:
           mkdir -p out
           javac -d out @sources.txt
 
-      - name: Run tests (dummy runner)
+      - name: Run compiled Java classes (dummy validation)
         run: |
-          echo "Running compiled classes..."
-          # You can run specific classes manually like:
-          # java -cp out week3.Java.Graphs.BFS
-          # For now, just confirm the .class files exist:
+          echo "Compiled .class files:"
           find out -name "*.class"
