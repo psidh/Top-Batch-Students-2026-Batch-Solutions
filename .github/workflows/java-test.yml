@@ -1,0 +1,37 @@
+name: Java CI
+
+on:
+  push:
+    paths:
+      - "**.java"
+  pull_request:
+    paths:
+      - "**.java"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Compile all Java files
+        run: |
+          find . -name "*.java" > sources.txt
+          mkdir -p out
+          javac -d out @sources.txt
+
+      - name: Run tests (dummy runner)
+        run: |
+          echo "Running compiled classes..."
+          # You can run specific classes manually like:
+          # java -cp out week3.Java.Graphs.BFS
+          # For now, just confirm the .class files exist:
+          find out -name "*.class"
