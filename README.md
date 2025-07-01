@@ -1,5 +1,7 @@
 # Top Batch Students – 2026 Placement Prep Solutions
 
+Created by - [P SIDHARTH - VU22CSEN0101626 (GITAM Final Year Student)](http://github.com/psidh)
+
 This repository is maintained for GITAM University students from the `Top Batch` who have opted for placements. It contains solutions to sample assessments and practice problems listed in this [Google Sheet](https://docs.google.com/spreadsheets/d/15PQZK_3u8Z-jFv1bZp4zmIkYcjCtxIQw/edit?usp=sharing&ouid=109604891750331250893&rtpof=true&sd=true).
 
 Currently, all solutions are in **Java**, and we welcome contributions in **C, C++**, and **Python** as well.
